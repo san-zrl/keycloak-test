@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Create CBOM
         uses: PQCA/CBOMkit-action@v1.1.0-alpha
-        id: cbom
       - name: Commit changes to new branch
         uses: actions/upload-artifact@v4
         with: 
           name: "CBOM"
-          path: ${{ steps.cbom.outputs.filename }}
+          path: cbom*.json
+          if-no-files-found: warn 
 
