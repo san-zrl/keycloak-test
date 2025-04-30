@@ -1,9 +1,6 @@
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   cbom-scan:
     runs-on: ubuntu-22.04
@@ -11,6 +8,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      packages: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
